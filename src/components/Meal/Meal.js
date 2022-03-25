@@ -2,6 +2,7 @@ import React from 'react';
 import './Meal.css';
 
 const Meal = (props) => {
+    const {handleAddToOrder, meal} = props;
     const { strMeal, strInstructions, strMealThumb } = props.meal;
     
     return (
@@ -9,7 +10,7 @@ const Meal = (props) => {
             <img src={strMealThumb} alt="" />
             <h4>{strMeal}</h4>
             <p>{strInstructions.slice(0, 100)}</p>
-            <button>Add this Food</button>
+            <button onClick={() => handleAddToOrder(meal)}>Add this Food</button>
         </div>
     );
 };
